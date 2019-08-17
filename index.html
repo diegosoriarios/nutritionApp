@@ -7,6 +7,7 @@
         <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
         <script type="text/javascript" src="https://s3.amazonaws.com/static.mlh.io/blog-code/2018-02-clarifai-nutrition-app/wolfram.js"></script>
         <script type="text/javascript" src="predict.js"></script>
+        <script type="text/javascript" src="webcam.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
@@ -17,6 +18,7 @@
             <form action="#">
                 <input type="file" id="filename" placeholder="Filename" size="100" />
                 <button onclick="predict_click($('#filename').val(), 'file'); return false">Get my Nutricional Breakdown!</button>
+                <center><a href="#" onclick="tirarFoto()">Tire sua foto</a></center>
             </form>
 
             <div id="predictions">
@@ -28,6 +30,12 @@
                     <div id="concepts"></div>
                 </div>
             </div>
+        </div>
+
+        <div class="webcam-container">
+            <video id="video" width="640" height="480" autoplay></video>
+            <button id="capturar" onclick="salvar()">Tirar foto</button>
+            <button id="voltar" onclick="voltar()">Voltar</button>
         </div>
     </body>
 </html>

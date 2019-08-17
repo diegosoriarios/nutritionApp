@@ -118,3 +118,7 @@ html, body {
   
   .powered-by img { height: 1rem; }
   
+
+  .webcam-container {
+    display: none;
+  }
