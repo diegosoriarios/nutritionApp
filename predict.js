@@ -1,6 +1,9 @@
 const myClarifaiApiKey = 'edcb560c7cb747088dedd52680f6b5e9'
 const myWolframAppId = 'TU38RL-E25YQ2GJ7K'
 
+const instagramApiKey = '2e9bae4e26a54cca9a0d66c582d27074'
+const instagramEndPoint = `https://api.instagram.com/v1/self/media/recent?access_token=${instagramApiKey}`
+
 const app = new Clarifai.App({apiKey: myClarifaiApiKey})
 
 predict_click = (value, source) => {
@@ -51,8 +54,16 @@ doPredict = value => {
   
           getNutritionalInfo(url, result => {
             $('#concepts').html('<h3>'+ tag + '</h3>' + "<img src='"+result+"'>");
+
+            $("#btn-share").attr('style', 'display: block')
           });
         }
       }, err => console.log(err)
     );
+}
+
+sharePicture = image => {
+  let url = "http://google.com";
+  let text = "Replace this with your text";
+  window.open('http://twitter.com/share?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
 }

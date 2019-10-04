@@ -28,6 +28,20 @@ html, body {
     display: block;
     margin: 4rem auto;
   }
+
+  #btn-share {
+    background: #1abc9c;
+    border-color: #1abc9c;
+    border-radius: 5px;
+    color: #fff;
+    display: none;
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 100%;
+  }
   
   .wrapper form button {
     background: #1abc9c;
